@@ -14,6 +14,12 @@ function App(): JSX.Element {
             </p>
             <h1>Welcome to Tommy&#39;s Website</h1>
             <img src={dog} alt="A picture of my dog Niko" />
+            Sports Ive Played:
+            <ul>
+                <li>Lacrosse</li>
+                <li>Football</li>
+                <li>Soccer</li>
+            </ul>
         </div>
     );
 }
