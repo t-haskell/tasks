@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import dog from "./my_dog.jpeg";
 
 function App(): JSX.Element {
     return (
@@ -11,7 +12,8 @@ function App(): JSX.Element {
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload. Website by Tommy Haskell. Hello World.
             </p>
-            <h1>Welcome to Tommy's Website</h1>
+            <h1>Welcome to Tommy&#39;s Website</h1>
+            <img src={dog} alt="A picture of my dog Niko" />
         </div>
     );
 }
