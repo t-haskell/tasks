@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "react-bootstrap";
 import "./App.css";
 import dog from "./my_dog.jpeg";
 
@@ -20,6 +21,9 @@ function App(): JSX.Element {
                 <li>Football</li>
                 <li>Soccer</li>
             </ul>
+            <Button onClick={() => console.log("Hello World!")}>
+                Log Hello World
+            </Button>
         </div>
     );
 }
