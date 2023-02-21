@@ -34,6 +34,7 @@ export function add3(first: number, second: number, third: number): number {
  * mark added to the end.
  */
 export function shout(message: string): string {
+    // eslint-disable-next-line prefer-const
     let finalVal: string = message.toUpperCase();
     return finalVal + "!";
 }
@@ -52,6 +53,7 @@ export function isQuestion(message: string): boolean {
  * upper or lower case), then return `false`. Otherwise, return `null`.
  */
 export function convertYesNo(word: string): boolean | null {
+    // eslint-disable-next-line prefer-const
     let comparable: string = word.toUpperCase();
     if (comparable === "YES") {
         return true;
