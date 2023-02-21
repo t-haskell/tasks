@@ -35,8 +35,7 @@ export function add3(first: number, second: number, third: number): number {
  */
 export function shout(message: string): string {
     let finalVal: string = message.toUpperCase();
-    finalVal.concat("!");
-    return finalVal;
+    return finalVal + "!";
 }
 
 /**
@@ -53,7 +52,7 @@ export function isQuestion(message: string): boolean {
  * upper or lower case), then return `false`. Otherwise, return `null`.
  */
 export function convertYesNo(word: string): boolean | null {
-    let comparable:string = word.toUpperCase();
+    let comparable: string = word.toUpperCase();
     if (comparable === "YES") {
         return true;
     } else if (comparable === "NO") {
