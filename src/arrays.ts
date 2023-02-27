@@ -12,7 +12,7 @@ export function bookEndList(numbers: number[]): number[] {
         tempList.splice(1, 0, tempList[0]);
         return tempList;
     } else {
-        const bookEnds: number[] = [tempList[0], tempList[tempList.length-1]];
+        const bookEnds: number[] = [tempList[0], tempList[tempList.length - 1]];
         return bookEnds;
     }
 }
@@ -22,7 +22,8 @@ export function bookEndList(numbers: number[]): number[] {
  * number has been tripled (multiplied by 3).
  */
 export function tripleNumbers(numbers: number[]): number[] {
-    return numbers;
+    const numTriple = numbers.map((num: number) => num * 3);
+    return numTriple;
 }
 
 /**
