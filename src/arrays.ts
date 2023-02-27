@@ -12,9 +12,8 @@ export function bookEndList(numbers: number[]): number[] {
         tempList.splice(1, 0, tempList[0]);
         return tempList;
     } else {
-        const bookEnds: number[] = [tempList[0], tempList[tempList.length]];
+        const bookEnds: number[] = [tempList[0], tempList[tempList.length-1]];
         return bookEnds;
-
     }
 }
 
