@@ -115,7 +115,7 @@ export function makeMath(addends: number[]): string {
         (currTotal: number, num: number) => currTotal + num,
         0
     );
-    const insertingPlus = equation.replaceAll(",","+");
+    const insertingPlus = equation.replaceAll(",", "+");
     return total + "=" + insertingPlus;
 }
 
