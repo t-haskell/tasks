@@ -61,10 +61,10 @@ export const removeDollars = (amounts: string[]): number[] => {
  */
 export const shoutIfExclaiming = (messages: string[]): string[] => {
     const noQuestionMarks = messages.filter(
-        (message: string): boolean => message[message.length] != "?"
+        (message: string): boolean => message[message.length - 1] != "?"
     );
     const makingUpper = noQuestionMarks.map((message: string): string =>
-        message[message.length] === "!" ? message.toUpperCase() : message
+        message[message.length - 1] === "!" ? message.toUpperCase() : message
     );
 
     return makingUpper;
