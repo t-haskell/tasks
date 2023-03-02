@@ -84,13 +84,15 @@ export function toShortForm(question: Question): string {
  */
 export function toMarkdown(question: Question): string {
     const line1 = "# " + question.name + "\n";
-    const line2 = question.body + "\n";
-    let line3: string[] = [];
+    const line2 = question.body;
+    let line3: string[] = ["\n"];
     if (question.type === "multiple_choice_question") {
         const optionsWithDashes = question.options.map(
             (option: string): string => "- " + option + "\n"
         );
         line3 = optionsWithDashes;
+    } else {
+        line3 = [];
     }
     const optionsFinal = line3.reduce(
         (currentOptions: string, option: string) => currentOptions + option,
