@@ -90,7 +90,8 @@ export function toMarkdown(question: Question): string {
         const optionsWithDashes = question.options.map(
             (option: string): string => "- " + option + "\n"
         );
-        line3 = optionsWithDashes;
+        line3 = line3.concat(optionsWithDashes);
+        line3;
     } else {
         line3 = [];
     }
@@ -99,7 +100,7 @@ export function toMarkdown(question: Question): string {
         ""
     );
 
-    return line1 + line2 + optionsFinal;
+    return line1 + line2 + optionsFinal.slice(0, optionsFinal.length - 1);
 }
 
 /**
