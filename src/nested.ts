@@ -24,8 +24,6 @@ export function getNonEmptyQuestions(questions: Question[]): Question[] {
             question.expected.length !== 0 ||
             question.options.length !== 0
     );
-
-
     return completeQuestions;
 }
 
@@ -37,7 +35,10 @@ export function findQuestion(
     questions: Question[],
     id: number
 ): Question | null {
-    return null;
+    const wantedQuestion = questions.find(
+        (question: Question): boolean => question.id === id
+    );
+    return wantedQuestion === undefined ? null : wantedQuestion;
 }
 
 /**
