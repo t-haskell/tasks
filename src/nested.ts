@@ -1,3 +1,4 @@
+import { table } from "console";
 import { Answer } from "./interfaces/answer";
 import { Question, QuestionType } from "./interfaces/question";
 
@@ -103,7 +104,25 @@ id,name,options,points,published
  * Check the unit tests for more examples!
  */
 export function toCSV(questions: Question[]): string {
-    return "";
+    const returningStr = questions.map(
+        (question: Question): string =>
+            question.id.toString() +
+            "," +
+            question.name +
+            "," +
+            question.options.length.toString() +
+            "," +
+            question.points.toString() +
+            "," +
+            question.published +
+            "\n"
+    );
+    //const tableTitle = "id,name,options,points,published\n";
+
+    return returningStr.reduce(
+        (finalAns: string, value: string): string => finalAns + value,
+        "id,name,options,points,published\n"
+    );
 }
 
 /**
