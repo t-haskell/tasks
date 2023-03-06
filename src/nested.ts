@@ -117,8 +117,6 @@ export function toCSV(questions: Question[]): string {
             "," +
             question.published
     );
-    //const tableTitle = "id,name,options,points,published\n";
-
     return returningStr.reduce(
         (finalAns: string, value: string): string => finalAns + value,
         "id,name,options,points,published"
@@ -131,6 +129,7 @@ export function toCSV(questions: Question[]): string {
  * making the `text` an empty string, and using false for both `submitted` and `correct`.
  */
 export function makeAnswers(questions: Question[]): Answer[] {
+    const answers = questions.map((question: Question): Answer =>  )
     return [];
 }
 
