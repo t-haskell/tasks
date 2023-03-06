@@ -106,6 +106,7 @@ id,name,options,points,published
 export function toCSV(questions: Question[]): string {
     const returningStr = questions.map(
         (question: Question): string =>
+            "\n" +
             question.id.toString() +
             "," +
             question.name +
@@ -114,14 +115,13 @@ export function toCSV(questions: Question[]): string {
             "," +
             question.points.toString() +
             "," +
-            question.published +
-            "\n"
+            question.published
     );
     //const tableTitle = "id,name,options,points,published\n";
 
     return returningStr.reduce(
         (finalAns: string, value: string): string => finalAns + value,
-        "id,name,options,points,published\n"
+        "id,name,options,points,published"
     );
 }
 
