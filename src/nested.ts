@@ -243,7 +243,40 @@ export function editOption(
     targetOptionIndex: number,
     newOption: string
 ): Question[] {
-    return [];
+    const newQuestions = questions.map(
+        (question: Question): Question =>
+            question.id === targetId
+                ? targetOptionIndex === -1
+                    ? {
+                        ...question,
+                        options: putOptionOnEnd(question, newOption)
+                    }
+                    : {
+                        ...question,
+                        options: putOptionAtIndex(
+                            question,
+                            newOption,
+                            targetOptionIndex
+                        )
+                    }
+                : { ...question }
+    );
+    return newQuestions;
+}
+export function putOptionOnEnd(
+    question: Question,
+    addingOption: string
+): string[] {
+    return [...question.options, addingOption];
+}
+export function putOptionAtIndex(
+    question: Question,
+    addingOption: string,
+    targetIndex: number
+): string[] {
+    const optionList = [...question.options];
+    optionList[targetIndex] = addingOption;
+    return optionList;
 }
 
 /***
