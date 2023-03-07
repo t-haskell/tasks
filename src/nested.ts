@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { table } from "console";
 import { Answer } from "./interfaces/answer";
 import { Question, QuestionType } from "./interfaces/question";
