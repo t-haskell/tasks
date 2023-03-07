@@ -247,18 +247,8 @@ export function editOption(
         (question: Question): Question =>
             question.id === targetId
                 ? targetOptionIndex === -1
-                    ? {
-                        ...question,
-                        options: putOptionOnEnd(question, newOption)
-                    }
-                    : {
-                        ...question,
-                        options: putOptionAtIndex(
-                            question,
-                            newOption,
-                            targetOptionIndex
-                        )
-                    }
+                    ? putOptionOnEnd(question, newOption)
+                    : putOptionAtIndex(question, newOption, targetOptionIndex)
                 : { ...question }
     );
     return newQuestions;
@@ -266,17 +256,19 @@ export function editOption(
 export function putOptionOnEnd(
     question: Question,
     addingOption: string
-): string[] {
-    return [...question.options, addingOption];
+): Question {
+    const newQ = { ...question, options: [...question.options, addingOption] };
+    return newQ;
 }
 export function putOptionAtIndex(
     question: Question,
     addingOption: string,
     targetIndex: number
-): string[] {
+): Question {
     const optionList = [...question.options];
     optionList[targetIndex] = addingOption;
-    return optionList;
+    const newQ = { ...question, options: optionList };
+    return newQ;
 }
 
 /***
