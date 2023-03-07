@@ -296,7 +296,5 @@ export function duplicateQuestionInArray(
     const copy = duplicateQuestion(newId, questions[indexOfTarget]);
     const withDup = [...questions];
     withDup.splice(indexOfTarget + 1, 0, copy);
-    console.log(withDup);
-
     return withDup;
 }
