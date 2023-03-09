@@ -46,7 +46,7 @@ export function CycleHoliday(): JSX.Element {
         <div>
             Cycle Holiday
             <br />
-            {currHoliday + ": " + setHolidayEmoji(currHoliday)}
+            {"Current Holiday: " + currHoliday + setHolidayEmoji(currHoliday)}
             <br />
             <Button
                 onClick={() => setHoliday(holidaysAlphabetically[currHoliday])}
