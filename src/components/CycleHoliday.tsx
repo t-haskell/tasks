@@ -26,11 +26,27 @@ const holidaysByDate: Record<Holiday, Holiday> = {
 export function CycleHoliday(): JSX.Element {
     const [currHoliday, setHoliday] = useState<Holiday>("Easter");
 
+    function setHolidayEmoji(holiday: Holiday): string {
+        let emoji = "";
+        if (holiday === "Christmas") {
+            emoji = "🎄";
+        } else if (holiday === "Easter") {
+            emoji = "🐣";
+        } else if (holiday === "Halloween") {
+            emoji = "🎃";
+        } else if (holiday === "Memorial_Day") {
+            emoji = "🇺🇸";
+        } else {
+            emoji = "🎆";
+        }
+        return emoji;
+    }
+
     return (
         <div>
             Cycle Holiday
             <br />
-            Current Holiday: {currHoliday}
+            Current Holiday: {currHoliday + ": " + setHolidayEmoji(currHoliday)}
             <Button
                 onClick={() => setHoliday(holidaysAlphabetically[currHoliday])}
             >
