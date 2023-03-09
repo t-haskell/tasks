@@ -36,12 +36,9 @@ export function CycleHoliday(): JSX.Element {
             >
                 Advance by Alphabet
             </Button>
-            <Button
-                onClick={() => setHoliday(holidaysAlphabetically[currHoliday])}
-            >
+            <Button onClick={() => setHoliday(holidaysByDate[currHoliday])}>
                 Advance by Year
             </Button>
-            Cycle Holiday
         </div>
     );
 }
