@@ -23,6 +23,7 @@ export function StartAttempt(): JSX.Element {
             >
                 Stop Quiz
             </Button>
+            <br />
             <Button
                 onClick={() => {
                     setAttempts(numAttempts + 1);
