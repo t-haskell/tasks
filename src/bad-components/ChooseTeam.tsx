@@ -15,10 +15,11 @@ export function ChooseTeam(): JSX.Element {
     const [team, setTeam] = useState<string[]>([]);
 
     function chooseMember(newMember: string) {
-        const compTeam = [...team];
+        let compTeam = [...team];
         !compTeam.includes(newMember)
-            ? setTeam([...team, newMember])
+            ? (compTeam = [...team, newMember])
             : undefined;
+        setTeam(compTeam);
     }
 
     function clearTeam() {
