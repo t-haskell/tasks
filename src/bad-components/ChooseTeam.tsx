@@ -16,9 +16,9 @@ export function ChooseTeam(): JSX.Element {
 
     function chooseMember(newMember: string) {
         const compTeam = [...team];
-        if (compTeam.indexOf(newMember)) {
-            setTeam([...team, newMember]);
-        }
+        !compTeam.includes(newMember)
+            ? setTeam([...team, newMember])
+            : undefined;
     }
 
     function clearTeam() {
