@@ -1,15 +1,19 @@
 import React, { useState } from "react";
-import { Form } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 
 export function GiveAttempts(): JSX.Element {
     const [attemptLeft, setAttempts] = useState<string>("3");
     const [requestAttempts, setRequest] = useState<string>("0");
-    const attemptsLeftNum = parseInt(attemptLeft) || 0;
+    const attemptsLeftNum = parseInt(requestAttempts) || "";
 
     function updateNumAttemptsRequest(
         event: React.ChangeEvent<HTMLInputElement>
     ) {
         setRequest(event.target.value);
+        // if (requestAttempts !== "") {
+        //     //Doesnt allow for the number of attempts to be changed if input is an invalid integer
+        //     setRequest(requestAttempts);
+        // }
     }
 
     return (
@@ -24,6 +28,22 @@ export function GiveAttempts(): JSX.Element {
                     onChange={updateNumAttemptsRequest}
                 />
             </Form.Group>
+            <Button
+                onClick={() =>
+                    setAttempts((parseInt(attemptLeft) - 1).toString())
+                }
+            >
+                Use
+            </Button>
+            <Button
+                onClick={() =>
+                    parseInt(requestAttempts) !== -1
+                        ? setAttempts(requestAttempts)
+                        : setAttempts(attemptLeft)
+                }
+            >
+                Gain
+            </Button>
         </div>
     );
 }
