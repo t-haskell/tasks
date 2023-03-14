@@ -21,7 +21,6 @@ export function CheckAnswer({
                 </Form.Group>
                 <div>{expectedAnswer === givenAnswer ? "✔️" : "❌"}</div>
             </div>
-
         </div>
     );
 }
