@@ -19,7 +19,9 @@ export function CheckAnswer({
                     <Form.Label>Take a guess:</Form.Label>
                     <Form.Control value={givenAnswer} onChange={updateGiven} />
                 </Form.Group>
+                <div>{expectedAnswer === givenAnswer ? "✔️" : "❌"}</div>
             </div>
+
         </div>
     );
 }
