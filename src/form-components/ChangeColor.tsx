@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Col, Form, Row } from "react-bootstrap";
-import { JsxElement } from "typescript";
 
 //Adding my custom colors
 export const COLORS = [
