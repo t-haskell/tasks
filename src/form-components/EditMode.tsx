@@ -19,6 +19,7 @@ export function EditMode(): JSX.Element {
     }
 
     return (
+        //View
         <div>
             <h3>Edit Mode</h3>
             <h5>
