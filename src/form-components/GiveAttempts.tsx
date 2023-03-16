@@ -9,7 +9,9 @@ export function GiveAttempts(): JSX.Element {
     function updateNumAttemptsRequest(
         event: React.ChangeEvent<HTMLInputElement>
     ) {
-        setRequest(event.target.value);
+        if (event.target.value !== "") {
+            setRequest(event.target.value);
+        }
         // if (requestAttempts !== "") {
         //     //Doesnt allow for the number of attempts to be changed if input is an invalid integer
         //     setRequest(requestAttempts);
@@ -32,18 +34,26 @@ export function GiveAttempts(): JSX.Element {
                 onClick={() =>
                     setAttempts((parseInt(attemptLeft) - 1).toString())
                 }
+                disabled={parseInt(attemptLeft) <= 0}
             >
                 Use
             </Button>
             <Button
-                onClick={() =>
-                    parseInt(requestAttempts) !== -1
-                        ? setAttempts(requestAttempts)
-                        : setAttempts(attemptLeft)
-                }
+                onClick={() => {
+                    if (parseInt(requestAttempts) !== -1) {
+                        setAttempts(
+                            (
+                                parseInt(requestAttempts) +
+                                parseInt(attemptLeft)
+                            ).toString()
+                        );
+                    }
+                }}
             >
                 Gain
             </Button>
         </div>
     );
 }
+
+//parseInt(requestAttempts) !== -1 ? setAttempts((parseInt(requestAttempts) +parseInt(attemptLeft)).toString()) : setAttempts(attemptLeft)
