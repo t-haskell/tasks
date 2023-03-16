@@ -4,7 +4,6 @@ import { Form, Button } from "react-bootstrap";
 export function GiveAttempts(): JSX.Element {
     const [attemptLeft, setAttempts] = useState<string>("3");
     const [requestAttempts, setRequest] = useState<string>("0");
-    const attemptsLeftNum = parseInt(requestAttempts) || "";
 
     function updateNumAttemptsRequest(
         event: React.ChangeEvent<HTMLInputElement>
